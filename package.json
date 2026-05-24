@@ -1,0 +1,62 @@
+{
+  "name": "file-agent-mcp",
+  "version": "0.1.0",
+  "description": "MCP server providing full-text search across local multi-format files (Markdown / DOCX / XLSX / PDF) backed by SQLite FTS5.",
+  "type": "module",
+  "bin": {
+    "file-agent-mcp": "./dist/index.js"
+  },
+  "main": "./dist/server.js",
+  "types": "./dist/server.d.ts",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test --test-reporter=spec test/markdown.test.ts test/paths.test.ts test/search-e2e.test.ts test/docx.test.ts test/xlsx.test.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "better-sqlite3": "^11.3.0",
+    "chokidar": "^4.0.1",
+    "exceljs": "^4.4.0",
+    "mammoth": "^1.8.0",
+    "unpdf": "^0.12.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/node": "^22.7.4",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "mcp",
+    "search",
+    "fts5",
+    "sqlite",
+    "markdown",
+    "docx",
+    "xlsx",
+    "pdf",
+    "claude",
+    "model-context-protocol"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afdpfrss/file-agent-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/afdpfrss/file-agent-mcp/issues"
+  },
+  "homepage": "https://github.com/afdpfrss/file-agent-mcp#readme",
+  "license": "MIT"
+}

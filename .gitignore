@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.file-agent-mcp/
+*.log
+*.tsbuildinfo
+.DS_Store
+coverage/
